@@ -5,9 +5,9 @@ import { Accordion, AccordionItem, Link } from "@heroui/react";
 
 const FAQS = [
   {
-    title: "🤔 What is Cinextma?",
+    title: "🤔 What is KFlix?",
     description:
-      "Just like every other website, Cinextma is also a streaming site that helps to easily access all the TV shows and movies we wanted, without spending hours searching for them.",
+      "Just like every other website, KFlix is also a streaming site that helps to easily access all the TV shows and movies we wanted, without spending hours searching for them.",
   },
   {
     title: "❓ So what do we actually do?",
@@ -36,7 +36,7 @@ const FAQS = [
   {
     title: "🐌 Streaming speed is slow or all videos do not play",
     description:
-      "When you go on the page with the episode, in 99% of the cases there is a video player. What you have to do is click the Play button, of course. If it does not work (Don’t be judgmental! Everybody makes mistakes!), just click on the Servers you see on the top right of your device. You will get a list of servers [Vidlink, VidSrc etc.] Try choosing different server, it will definitely solve the problem.",
+      "When you go on the page with the episode, in 99% of the cases there is a video player. What you have to do is click the Play button, of course. If it does not work (Don’t be judgmental! Everybody makes mistakes!), just click on the Servers you see on the top right of your device. You will get a list of servers [Server 1, Server 2 etc.] Try choosing different server, it will definitely solve the problem.",
   },
   {
     title: "😁 I want to download video",
