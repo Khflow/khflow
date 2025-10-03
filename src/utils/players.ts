@@ -21,7 +21,7 @@ export const getMoviePlayers = (id: string | number, startAt?: number): PlayersP
     },
     {
       title: "Server 2",
-      source: `https://www.vidking.net/embed/movie/${id}?autoPlay=true`,
+      source: `https://player.videasy.net/movie/${id}`,
       recommended: true,
       fast: true,
       ads: true,
@@ -29,28 +29,28 @@ export const getMoviePlayers = (id: string | number, startAt?: number): PlayersP
     },
     {
       title: "Server 3",
-      source: `https://player.videasy.net/movie/${id}`,
+      source: `https://vidfast.pro/movie/${id}`,
       ads: true,
     },
     {
       title: "Server 4",
-      source: `https://vidfast.pro/movie/${id}`,
+      source: `https://kisskh.wiki/embed/movie?tmdb=${id}`,
       fast: true,
       ads: true,
     },
     {
       title: "Server 5",
-      source: `https://kisskh.wiki/embed/movie?tmdb=${id}`,
-      ads: true,
-    },
-    {
-      title: "Server 6",
       source: `https://moviesapi.club/movie/${id}`,
       ads: true,
     },
     {
-      title: "Server 7",
+      title: "Server 6",
       source: `https://vidsrc.cc/v3/embed/movie/${id}?autoPlay=false`,
+      ads: true,
+    },
+    {
+      title: "Server 7",
+      source: `https://www.vidking.net/embed/movie/${id}?autoPlay=true`,
       fast: true,
       ads: true,
     },
@@ -85,7 +85,7 @@ export const getTvShowPlayers = (
     },
     {
       title: "Server 2",
-      source: `https://www.vidking.net/embed/tv/${id}/${season}/${episode}?autoPlay=true`,
+      source: `https://player.videasy.net/tv/${id}/${season}/${episode}`,
       recommended: true,
       fast: true,
       ads: true,
@@ -93,28 +93,28 @@ export const getTvShowPlayers = (
     },
     {
       title: "Server 3",
-      source: `https://player.videasy.net/tv/${id}/${season}/${episode}`,
+      source: `https://vidfast.pro/tv/${id}/${season}/${episode}`,
       ads: true,
     },
     {
       title: "Server 4",
-      source: `https://vidfast.pro/tv/${id}/${season}/${episode}`,
+      source: `https://moviesapi.club/tv/${id}-${season}-${episode}`,
       fast: true,
       ads: true,
     },
     {
       title: "Server 5",
-      source: `https://moviesapi.club/tv/${id}-${season}-${episode}`,
-      ads: true,
-    },
-    {
-      title: "Server 6",
       source: `https://kisskh.wiki/embed/tv?tmdb=${id}&season=${season}&episode=${episode}`,
       ads: true,
     },
     {
-      title: "Server 7",
+      title: "Server 6",
       source: `https://vidsrc.cc/v3/embed/tv/${id}/${season}/${episode}?autoPlay=false`,
+      ads: true,
+    },
+    {
+      title: "Server 7",
+      source: `https://www.vidking.net/embed/tv/${id}/${season}/${episode}?autoPlay=true`,
       fast: true,
       ads: true,
     },
