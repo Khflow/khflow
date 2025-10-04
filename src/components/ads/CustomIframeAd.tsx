@@ -1,72 +1,43 @@
-'use client'; // This makes it a Client Component—runs only on the browser
+"use client";
 
-import { FC, useEffect } from 'react';
+import React, { useEffect } from "react";
 
-interface CustomIframeAdProps {
-  adKey: string; // Your ad key, e.g., '297ed86b29d181f660479ebab2f97717'
-  width?: number; // Default: 300
-  height?: number; // Default: 250
-  format?: string; // Default: 'iframe'
+interface BannerAdProps {
+  adKey: string; // The key from Adsterra
+  width?: number;
+  height?: number;
+  id: string; // Unique container ID
 }
 
-const CustomIframeAd: FC<CustomIframeAdProps> = ({
-  adKey,
-  width = 300,
-  height = 250,
-  format = 'iframe',
-}) => {
+const BannerAd: React.FC<BannerAdProps> = ({ adKey, width = 728, height = 90, id }) => {
   useEffect(() => {
-    // Only run on client-side
-    if (typeof window === 'undefined') return;
-
-    // Remove any existing script to avoid duplicates
-    const existingScript = document.getElementById(`ad-script-${adKey}`);
-    if (existingScript) {
-      existingScript.remove();
-    }
-
-    // Create the config script
-    const configScript = document.createElement('script');
-    configScript.type = 'text/javascript';
-    configScript.id = `ad-config-${adKey}`;
-    configScript.innerHTML = `
-      atOptions = {
-        'key': '${adKey}',
-        'format': '${format}',
-        'height': ${height},
-        'width': ${width},
-        'params': {}
-      };
-    `;
-    document.body.appendChild(configScript);
-
-    // Create the invoke script
-    const invokeScript = document.createElement('script');
-    invokeScript.type = 'text/javascript';
-    invokeScript.id = `ad-script-${adKey}`;
-    invokeScript.src = `//www.highperformanceformat.com/${adKey}/invoke.js`;
-    document.body.appendChild(invokeScript);
-
-    // Cleanup on unmount
-    return () => {
-      if (configScript.parentNode) configScript.parentNode.removeChild(configScript);
-      if (invokeScript.parentNode) invokeScript.parentNode.removeChild(invokeScript);
+    // Define atOptions before script loads
+    (window as any).atOptions = {
+      key: adKey,
+      format: "iframe",
+      height,
+      width,
+      params: {},
     };
-  }, [adKey, width, height, format]);
+
+    // Create script
+    const script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = `//www.highperformanceformat.com/${adKey}/invoke.js`;
+    script.async = true;
+
+    const container = document.getElementById(id);
+    if (container) {
+      container.innerHTML = ""; // clear on re-render
+      container.appendChild(script);
+    }
+  }, [adKey, width, height, id]);
 
   return (
-    <div
-      style={{
-        width: `${width}px`,
-        height: `${height}px`,
-        margin: '0 auto', // Center it
-      }}
-      className="border border-gray-200 rounded" // Optional: Visual placeholder
-    >
-      {/* Ad will render here via the script */}
-      <div id={`ad-placeholder-${adKey}`} />
+    <div className="flex justify-center">
+      <div id={id} style={{ width, height }} />
     </div>
   );
 };
 
-export default CustomIframeAd;
+export default BannerAd;
