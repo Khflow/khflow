@@ -1,7 +1,8 @@
 {
-  "name": "cinextma",
+  "name": "kflix",
   "version": "1.0.0",
   "private": true,
+  "description": "KFlix — A Next.js streaming platform powered by Supabase and TailwindCSS.",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -11,7 +12,9 @@
     "sb-stop": "supabase stop --debug --all",
     "sb-restart": "supabase stop --debug --all && supabase start --debug --ignore-health-check",
     "sb-db-reset": "supabase db reset",
-    "sb-db-types": "supabase gen types typescript --local > src/utils/supabase/types.ts"
+    "sb-db-types": "supabase gen types typescript --local > src/utils/supabase/types.ts",
+    "format": "prettier --write .",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@bprogress/next": "^3.2.12",
@@ -72,5 +75,19 @@
   "overrides": {
     "@types/react": "19.1.12",
     "@types/react-dom": "19.1.9"
-  }
+  },
+  "engines": {
+    "node": ">=18.17.0",
+    "npm": ">=9.0.0"
+  },
+  "keywords": [
+    "nextjs",
+    "supabase",
+    "tailwindcss",
+    "streaming",
+    "react",
+    "pwa"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
 }
