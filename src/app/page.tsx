@@ -1,14 +1,13 @@
-import { NextPage } from "next";
 import dynamic from "next/dynamic";
 
-// Dynamic imports for your sections
+// Dynamic imports for your sections (these can stay as-is if they're Client Components or static)
 const ContinueWatching = dynamic(() => import("@/components/sections/Home/ContinueWatching"));
 const HomePageList = dynamic(() => import("@/components/sections/Home/List"));
 
-// Dynamic import for the ad (client-side only)
-const CustomIframeAd = dynamic(() => import("@/components/ads/CustomIframeAd"), { ssr: false });
+// Dynamic import for the ad (no { ssr: false } needed—'use client' handles it)
+const CustomIframeAd = dynamic(() => import("@/components/ads/CustomIframeAd"));
 
-const HomePage: NextPage = () => {
+const HomePage = () => { // No NextPage needed in App Router
   return (
     <div className="flex flex-col gap-3 md:gap-8">
       <ContinueWatching />
