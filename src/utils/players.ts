@@ -34,7 +34,7 @@ export const getMoviePlayers = (id: string | number, startAt?: number): PlayersP
     },
     {
       title: "Server 4",
-      source: `https://vidfast.pro/movie/${id}`,
+      source: `https://vidfast.pro/movie/${id}?chromecast=false`,
       fast: true,
       ads: true,
     },
@@ -104,7 +104,7 @@ export const getTvShowPlayers = (
     },
     {
       title: "Server 5",
-      source: `https://vidfast.pro/tv/${id}/${season}/${episode}`,
+      source: `https://vidfast.pro/tv/${id}/${season}/${episode}?autoPlay=true&chromecast=false`,
       ads: true,
     },
     {
