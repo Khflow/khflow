@@ -1,10 +1,10 @@
 {
-  "name": "KFlix",
+  "name": "kflix",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build && npx @cloudflare/next-on-pages",
+    "dev": "next dev --turbopack",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "sb-start": "supabase start --debug --ignore-health-check",
@@ -47,7 +47,6 @@
     "zod": "^4.1.1"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "^1.0.0",
     "@iconify/react": "^6.0.0",
     "@tailwindcss/postcss": "^4.1.12",
     "@tanstack/react-query-devtools": "^5.85.3",
@@ -66,7 +65,9 @@
   "prettier": {
     "proseWrap": "never",
     "printWidth": 100,
-    "plugins": ["prettier-plugin-tailwindcss"]
+    "plugins": [
+      "prettier-plugin-tailwindcss"
+    ]
   },
   "overrides": {
     "@types/react": "19.1.12",
