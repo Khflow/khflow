@@ -1,3 +1,5 @@
+'use client'; // This makes it a Client Component—runs only on the browser
+
 import { FC, useEffect } from 'react';
 
 interface CustomIframeAdProps {
