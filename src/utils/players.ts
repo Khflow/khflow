@@ -29,12 +29,12 @@ export const getMoviePlayers = (id: string | number, startAt?: number): PlayersP
     },
     {
       title: "Server 3",
-      source: `https://vidfast.pro/movie/${id}`,
+      source: `https://kisskh.wiki/embed/movie?tmdb=${id}`,
       ads: true,
     },
     {
       title: "Server 4",
-      source: `https://kisskh.wiki/embed/movie?tmdb=${id}`,
+      source: `https://vidfast.pro/movie/${id}`,
       fast: true,
       ads: true,
     },
@@ -93,7 +93,7 @@ export const getTvShowPlayers = (
     },
     {
       title: "Server 3",
-      source: `https://vidfast.pro/tv/${id}/${season}/${episode}`,
+      source: `https://kisskh.wiki/embed/tv?tmdb=${id}&season=${season}&episode=${episode}`,
       ads: true,
     },
     {
@@ -104,7 +104,7 @@ export const getTvShowPlayers = (
     },
     {
       title: "Server 5",
-      source: `https://kisskh.wiki/embed/tv?tmdb=${id}&season=${season}&episode=${episode}`,
+      source: `https://vidfast.pro/tv/${id}/${season}/${episode}`,
       ads: true,
     },
     {
