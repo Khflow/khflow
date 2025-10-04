@@ -1,5 +1,27 @@
-name = "my-next-app"
-compatibility_date = "2025-10-04"
+# wrangler.toml
 
-[assets]
-directory = ".next"
+name = "kflix"
+main = ".vercel/output/static"
+compatibility_date = "2024-09-01"
+
+# This ensures Cloudflare uses the correct compatibility features for Next.js
+compatibility_flags = ["nodejs_compat"]
+
+# For deploying Next.js as a Worker (optional, useful for SSR)
+[site]
+bucket = ".vercel/output/static"
+
+[build]
+command = "npm run build"
+cwd = "./"
+
+[env.production]
+vars = { NODE_ENV = "production" }
+
+[env.development]
+vars = { NODE_ENV = "development" }
+
+# If you use Turnstile, add your keys here (optional)
+[vars]
+NEXT_PUBLIC_TURNSTILE_SITE_KEY = "your-public-site-key"
+TURNSTILE_SECRET_KEY = "your-secret-key"
