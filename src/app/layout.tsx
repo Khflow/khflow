@@ -14,6 +14,8 @@ import { IS_PRODUCTION, SpacingClasses } from "@/utils/constants";
 import dynamic from "next/dynamic";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Suspense } from "react";
+import Script from "next/script"; // ✅ Added
+
 const Disclaimer = dynamic(() => import("@/components/ui/overlay/Disclaimer"));
 
 export const metadata: Metadata = {
@@ -56,6 +58,19 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html suppressHydrationWarning lang="en">
+      {/* ✅ Google Analytics Script */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-MGM1B6KYTE"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-MGM1B6KYTE');
+        `}
+      </Script>
       <body className={cn("bg-background min-h-dvh antialiased select-none", Poppins.className)}>
         <Suspense>
           <NuqsAdapter>
