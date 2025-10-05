@@ -56,7 +56,7 @@ export const getMoviePlayers = (id: string | number, startAt?: number): PlayersP
     },
         {
       title: "Server 8",
-      source: `https://player.vidplus.to/embed/movie/${id}?autoplay=true&autonext=false&nextbutton=false&poster=false&title=false&watchparty=false&chromecast=false&episodelist=false&servericon=true&setting=true&pip=true&primarycolor=#FF0000&secondarycolor=9F9BFF&iconcolor=FFFFFF&font=Roboto&fontcolor=FFFFFF&fontsize=20&opacity=0.5`,
+      source: `https://player.vidplus.to/embed/movie/${id}?autoplay=true&poster=false&title=true&watchparty=false&chromecast=false&servericon=true&setting=true&pip=true&primarycolor=FF0000&secondarycolor=FFFFFF&iconcolor=FFFFFF&font=Roboto&fontcolor=FFFFFF&fontsize=20&opacity=0.5`,
       fast: true,
       ads: true,
     },
@@ -126,7 +126,7 @@ export const getTvShowPlayers = (
     },
         {
       title: "Server 8",
-      source: `https://player.vidplus.to/embed/tv/${id}/${season}/${episode}?autoplay=true&autonext=false&nextbutton=false&poster=false&title=false&watchparty=false&chromecast=false&episodelist=false&servericon=true&setting=true&pip=true&primarycolor=#FF0000&secondarycolor=9F9BFF&iconcolor=FFFFFF&font=Roboto&fontcolor=FFFFFF&fontsize=20&opacity=0.5`,
+      source: `https://player.vidplus.to/embed/tv/${id}/${season}/${episode}?autoplay=true&poster=false&title=true&watchparty=false&chromecast=false&servericon=true&setting=true&pip=true&primarycolor=FF0000&secondarycolor=FFFFFF&iconcolor=FFFFFF&font=Roboto&fontcolor=FFFFFF&fontsize=20&opacity=0.5`,
       fast: true,
       ads: true,
     },
