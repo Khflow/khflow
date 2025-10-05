@@ -30,7 +30,10 @@ export const getMoviePlayers = (id: string | number, startAt?: number): PlayersP
     {
       title: "Server 3",
       source: `https://kisskh.wiki/embed/movie?tmdb=${id}`,
+      recommended: true,
+      fast: true,
       ads: true,
+      resumable: true,
     },
     {
       title: "Server 4",
@@ -51,7 +54,6 @@ export const getMoviePlayers = (id: string | number, startAt?: number): PlayersP
     {
       title: "Server 7",
       source: `https://www.vidking.net/embed/movie/${id}?autoPlay=true`,
-      fast: true,
       ads: true,
     },
         {
@@ -59,6 +61,13 @@ export const getMoviePlayers = (id: string | number, startAt?: number): PlayersP
       source: `https://player.vidplus.to/embed/movie/${id}?autoplay=true&poster=false&title=true&watchparty=false&chromecast=false&servericon=true&setting=true&pip=true&primarycolor=FF0000&secondarycolor=FFFFFF&iconcolor=FFFFFF&font=Roboto&fontcolor=FFFFFF&fontsize=20&opacity=0.5`,
       fast: true,
       ads: true,
+    },
+    {
+      title: "Server 9",
+      source: `https://vidlink.pro/movie/${id}?player=jw&title=false&primaryColor=006fee&secondaryColor=a2a2a2&iconColor=eefdec&autoplay=false&startAt=${startAt || ""}`,
+      fast: true,
+      ads: true,
+      resumable: true,
     },
   ];
 };
@@ -100,7 +109,10 @@ export const getTvShowPlayers = (
     {
       title: "Server 3",
       source: `https://kisskh.wiki/embed/tv?tmdb=${id}&season=${season}&episode=${episode}`,
+      recommended: true,
+      fast: true,
       ads: true,
+      resumable: true,
     },
     {
       title: "Server 4",
@@ -121,14 +133,20 @@ export const getTvShowPlayers = (
     {
       title: "Server 7",
       source: `https://www.vidking.net/embed/tv/${id}/${season}/${episode}?autoPlay=true`,
-      fast: true,
       ads: true,
     },
-        {
+    {
       title: "Server 8",
       source: `https://player.vidplus.to/embed/tv/${id}/${season}/${episode}?autoplay=true&poster=false&title=true&watchparty=false&chromecast=false&servericon=true&setting=true&pip=true&primarycolor=FF0000&secondarycolor=FFFFFF&iconcolor=FFFFFF&font=Roboto&fontcolor=FFFFFF&fontsize=20&opacity=0.5`,
       fast: true,
       ads: true,
+    },
+    {
+      title: "Server 9",
+      source: `https://vidlink.pro/tv/${id}/${season}/${episode}?player=jw&title=false&primaryColor=f5a524&secondaryColor=a2a2a2&iconColor=eefdec&autoplay=false&startAt=${startAt || ""}`,
+      fast: true,
+      ads: true,
+      resumable: true,
     },
   ];
 };
