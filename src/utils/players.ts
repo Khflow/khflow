@@ -54,6 +54,12 @@ export const getMoviePlayers = (id: string | number, startAt?: number): PlayersP
       fast: true,
       ads: true,
     },
+        {
+      title: "Server 8",
+      source: `https://player.vidplus.to/embed/movie/${id}?autoplay=true&autonext=false&nextbutton=false&poster=false&title=false&watchparty=false&chromecast=false&episodelist=false&servericon=true&setting=true&pip=true&primarycolor=#FF0000&secondarycolor=9F9BFF&iconcolor=FFFFFF&font=Roboto&fontcolor=FFFFFF&fontsize=20&opacity=0.5`,
+      fast: true,
+      ads: true,
+    },
   ];
 };
 
@@ -115,6 +121,12 @@ export const getTvShowPlayers = (
     {
       title: "Server 7",
       source: `https://www.vidking.net/embed/tv/${id}/${season}/${episode}?autoPlay=true`,
+      fast: true,
+      ads: true,
+    },
+        {
+      title: "Server 8",
+      source: `https://player.vidplus.to/embed/tv/${id}/${season}/${episode}?autoplay=true&autonext=false&nextbutton=false&poster=false&title=false&watchparty=false&chromecast=false&episodelist=false&servericon=true&setting=true&pip=true&primarycolor=#FF0000&secondarycolor=9F9BFF&iconcolor=FFFFFF&font=Roboto&fontcolor=FFFFFF&fontsize=20&opacity=0.5`,
       fast: true,
       ads: true,
     },
