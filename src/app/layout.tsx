@@ -14,40 +14,52 @@ import { IS_PRODUCTION, SpacingClasses } from "@/utils/constants";
 import dynamic from "next/dynamic";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Suspense } from "react";
-import Script from "next/script"; // ✅ Added
+import Script from "next/script";
 
 const Disclaimer = dynamic(() => import("@/components/ui/overlay/Disclaimer"));
 
+/* ✅ Full SEO metadata */
 export const metadata: Metadata = {
-  title: siteConfig.name,
-  applicationName: siteConfig.name,
-  description: siteConfig.description,
+  title: {
+    default: "KFlix – Watch Movies & TV Shows Online",
+    template: "%s | KFlix",
+  },
+  applicationName: "KFlix",
+  description:
+    "Your only choice for a free movies and TV shows streaming website. Watch HD dramas, series, and films online.",
   manifest: "/manifest.json",
   icons: {
     icon: siteConfig.favicon,
   },
-  twitter: {
-    card: "summary",
-    title: {
-      default: siteConfig.name,
-      template: siteConfig.name,
-    },
-    description: siteConfig.description,
-  },
   openGraph: {
     type: "website",
-    siteName: siteConfig.name,
-    title: {
-      default: siteConfig.name,
-      template: siteConfig.name,
-    },
-    description: siteConfig.description,
+    siteName: "KFlix",
+    title: "KFlix – Watch Movies & TV Shows Online",
+    description:
+      "Stream movies and TV shows for free on KFlix. HD quality with subtitles.",
+    url: "https://kflix.co",
+    images: [
+      {
+        url: "https://kflix.co/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "KFlix",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "KFlix – Watch Movies & TV Shows Online",
+    description:
+      "Your only choice for a free movies and TV shows streaming website.",
+    images: ["https://kflix.co/og-image.jpg"],
   },
   formatDetection: {
     telephone: false,
   },
 };
 
+/* ✅ Theme color for mobile UI */
 export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#FFFFFF" },
@@ -55,10 +67,13 @@ export const viewport: Viewport = {
   ],
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+/* ✅ Root layout */
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html suppressHydrationWarning lang="en">
-      {/* ✅ Google Analytics Script */}
+      {/* ✅ Google Analytics */}
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-MGM1B6KYTE"
         strategy="afterInteractive"
@@ -71,6 +86,18 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           gtag('config', 'G-MGM1B6KYTE');
         `}
       </Script>
+
+      {/* ✅ JSON-LD Structured Data (lets Google show "KFlix" instead of kflix.co) */}
+      <Script id="structured-data" type="application/ld+json" strategy="beforeInteractive">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "KFlix",
+          alternateName: "KFlix.co",
+          url: "https://kflix.co/",
+        })}
+      </Script>
+
       <body className={cn("bg-background min-h-dvh antialiased select-none", Poppins.className)}>
         <Suspense>
           <NuqsAdapter>
@@ -86,6 +113,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             </Providers>
           </NuqsAdapter>
         </Suspense>
+
+        {/* ✅ Vercel tools */}
         <SpeedInsights debug={false} />
         <Analytics debug={false} />
       </body>
