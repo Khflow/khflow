@@ -8,7 +8,7 @@ import { NextPage } from "next";
 const FAQ = dynamic(() => import("@/components/sections/About/FAQ"));
 
 export const metadata: Metadata = {
-  title: "About",
+  title: `About | ${siteConfig.name}`,
 };
 
 const AboutPage: NextPage = () => {
