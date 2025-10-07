@@ -7,7 +7,7 @@ const UnauthorizedNotice = dynamic(() => import("@/components/ui/notice/Unauthor
 const LibraryList = dynamic(() => import("@/components/sections/Library/List"));
 
 export const metadata: Metadata = {
-  title: `Library | ${siteConfig.name}`,
+  title: `Library`,
 };
 
 const getUser = cache(async () => {
