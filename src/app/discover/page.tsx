@@ -5,7 +5,7 @@ import { Suspense } from "react";
 const DiscoverListGroup = dynamic(() => import("@/components/sections/Discover/ListGroup"));
 
 export const metadata: Metadata = {
-  title: `Discover Movies | ${siteConfig.name}`,
+  title: `Discover Movies`,
 };
 
 const DiscoverPage: NextPage = () => {
