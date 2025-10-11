@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Avatar",
+    "thumbnail": "/posters/avatar.svg",
+    "videoUrl": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
+  },
+  {
+    "id": 2,
+    "title": "Inception",
+    "thumbnail": "/posters/inception.svg",
+    "videoUrl": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+  },
+  {
+    "id": 3,
+    "title": "Interstellar",
+    "thumbnail": "/posters/interstellar.svg",
+    "videoUrl": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
+  },
+  {
+    "id": 4,
+    "title": "The Matrix",
+    "thumbnail": "/posters/matrix.svg",
+    "videoUrl": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+  }
+]
