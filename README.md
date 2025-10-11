@@ -38,7 +38,7 @@ I enjoy working with cutting-edge tools like **Next.js**, **Cloudflare Pages**, 
 ---
 
 ## 🌟 **Featured Projects**
-🚧 More coming soon — stay tuned!
+🚧 More coming soon stay tuned!
 
 ---
 
