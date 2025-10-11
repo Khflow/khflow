@@ -52,4 +52,4 @@ I enjoy working with cutting-edge tools like **Next.js**, **Cloudflare Pages**, 
 
 ---
 
-✨ _Thanks for visiting my profile — don't forget to ⭐ star some projects you like!_
+✨ _Thanks for visiting my profile don't forget to ⭐ star some projects you like!_
